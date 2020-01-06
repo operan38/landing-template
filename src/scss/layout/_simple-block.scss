@@ -1,0 +1,15 @@
+.simple-block {
+    margin: 10px 0;
+}
+
+.simple-block-item {
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px){
+    .simple-block-item img {
+        width: 100%;
+        display: block;
+    }
+}

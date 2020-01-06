@@ -1,0 +1,71 @@
+.btn-yellow {
+    background: #fee48f;
+    background: linear-gradient(180deg,#fee48f 0%,#f9b334 100%);
+    box-shadow: 0 2px 0 0 rgba(255,150,0,.004), 0 10px 35px 0 rgba(255,150,0,.3), inset 0 2px 0 0 rgba(255,254,204,.004);
+    border-bottom: 2px solid #ff9600;
+    color: #7f350c;
+    border-radius: 7px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: .3s;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.btn-yellow-lg {
+    padding: 23px 70px;
+}
+
+.js-btn-up-page {
+    display: inline-block;
+    background-color: none;
+    /*border: 1px solid #CDCDCD;*/
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    transition: background-color .5s, 
+    opacity .5s, visibility .5s, box-shadow .2s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        border-right: 3px solid #999;
+        border-top: 3px solid #999;
+        transform: rotate(315deg);
+        top: 20px;
+        left: 14px;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        box-shadow: 0 2px 0 0 rgba(255,150,0,.004), 0 10px 35px 0 rgba(255,150,0,.3), inset 0 2px 0 0 rgba(255,254,204,.004);
+    }
+
+    &:hover::after {
+        border-right: 3px solid #ff9600;
+        border-top: 3px solid #ff9600;
+    }
+
+    &:active {
+        box-shadow: 0 2px 0 0 rgba(255,150,0,.004), 0 10px 35px 0 rgba(255,150,0,.3), inset 0 2px 0 0 rgba(255,254,204,.004);
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}

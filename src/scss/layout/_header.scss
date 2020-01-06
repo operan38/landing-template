@@ -1,0 +1,70 @@
+.header {
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 5px 5px -5px #333;
+    padding: 5px 0px;
+}
+
+.header-row {
+    align-items: center;
+}
+
+.header-phone-col {
+    text-align: right;
+}
+
+.header-logo-col {
+    align-items: center;
+}
+
+.header__logo-desc {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin-bottom: 1px;
+    }
+}
+
+.header-logo {
+    padding-right: 10px;
+}
+
+.header-desc {
+    font-size: 18px;
+}
+
+.header-phone {
+    color: #000;
+    font-size: 22px;
+
+    i {
+        font-size: 22px;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.header-top-menu {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 767px) {
+
+    .header__logo-desc {
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .header-phone-col {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

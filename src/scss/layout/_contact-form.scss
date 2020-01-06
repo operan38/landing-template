@@ -1,0 +1,33 @@
+.contact-form {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    box-shadow: 0 -5px 5px -5px #333;
+    height: 100%;
+}
+
+.contact-form__contact {
+    text-align: center;
+}
+
+.contact-form__contact-list {
+    margin-bottom: 5px;
+}
+
+.contact-form__contact-title {
+    font-size: 20px;
+}
+
+.contact-form__contact-list__item {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    a {
+        color: #fff;
+    }
+}

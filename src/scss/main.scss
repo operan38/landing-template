@@ -1,0 +1,7 @@
+@import '/../../libs/bootstrap/css/bootstrap.min.css';
+@import '/../../libs/font-awesome-4.7.0/css/font-awesome.min.css';
+@import '/../../libs/slick/slick.css';
+@import '/../../libs/slick/slick-theme.css';
+@import 'base/module'; // Подключаем базовые стили (html, body)
+@import 'layout/module'; // Подключаем шаблоны
+@import 'components/module'; // Подключаем компоненты
