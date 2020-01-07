@@ -6,4 +6,4 @@
     <title><?php echo $PAGE_TITLE ?></title>
     <link rel="stylesheet" href="/dist/css/static.min.css" />
 </head>
-<body>
+<body style="/*background: #e4f8fc*/"> <!-- Цвет фона -->

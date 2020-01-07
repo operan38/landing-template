@@ -9,7 +9,7 @@
     require_once('template/why-us.html');
     require_once('template/how-to-order.html');
     require_once('template/catalog-6col.html');
-    //require_once('template/simple-block-1.html');
+    require_once('template/simple-block-1.html');
     require_once('template/reviews.html');
     require_once('template/faq.html');
     require_once('template/callback-form.html');

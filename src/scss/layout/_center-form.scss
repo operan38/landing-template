@@ -1,18 +1,37 @@
 .center-form {
+    color: #fff;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+}
 
-    //text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+.center-form-img-col {
+    justify-content: space-between;
 }
 
 .center-form__title {
     max-width: 500px;
     margin-bottom: 0px;
-    font-size: 28px;
+    font-size: 40px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.center-form-container__title {
+    padding-top: 225px;
+}
+
+.deadline__text {
+    padding-top: 10px;
+    margin-bottom: 0px;
 }
 
 .center-form__desc {
     max-width: 500px;
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.center-form__advantages-list {
+    font-size: 18px;
 }
 
 .center-form__btn {
@@ -21,8 +40,9 @@
 
 .center-form__order {
     border-radius: 10px;
-    border: 2px solid #fccd65;
+    border: 3px solid #fccd65;
     padding: 40px;
+    padding-bottom: 20px;
 }
 
 .center-form__order-title1 {

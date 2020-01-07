@@ -64,6 +64,7 @@ $(document).ready(function(){
 
     $('.js-faq-list__item-header').on('click', function(){
         $(this).parent().children('.js-faq-list__item-body').slideToggle();
+        $(this).children('.faq-list__item-arrow').toggleClass('openned');
     })
 
     /* js-btn-up-page */

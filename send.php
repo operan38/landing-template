@@ -28,7 +28,7 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
     '
     <style type="text/css">
         body {
-            background-color: #F9F9F9;
+            background-color: #EDEDED;
         }
     </style>
     <section>
@@ -90,7 +90,7 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
                                     <p class="custom-card__order-price__old-price">2 999Р</p>
                                     <p class="custom-card__order-price__new-price">999Р</p>
                                 </div>
-                                <a class="btn btn-success w-100" style="color: #fff">
+                                <a class="btn btn-success w-100" style="color: #fff" href="/">
                                     Заказать
                                 </a>
                             </div>
@@ -119,7 +119,7 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
                                     <p class="custom-card__order-price__old-price">2 999Р</p>
                                     <p class="custom-card__order-price__new-price">999Р</p>
                                 </div>
-                                <a class="btn btn-success w-100" style="color: #fff">
+                                <a class="btn btn-success w-100" style="color: #fff" href="/">
                                     Заказать
                                 </a>
                             </div>
@@ -148,7 +148,7 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
                                     <p class="custom-card__order-price__old-price">2 999Р</p>
                                     <p class="custom-card__order-price__new-price">999Р</p>
                                 </div>
-                                <a class="btn btn-success w-100" style="color: #fff">
+                                <a class="btn btn-success w-100" style="color: #fff" href="/">
                                     Заказать
                                 </a>
                             </div>

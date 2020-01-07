@@ -30,3 +30,21 @@
 .faq-list__item-answer {
     margin-top: 5px;
 }
+
+.faq-list__item-arrow {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    font-size: 32px;
+    margin-top: -15px;
+    right: 0;
+    transition: .3s;
+    
+    &.openned {
+        transform: rotate(-180deg);
+    }
+}
