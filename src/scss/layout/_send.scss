@@ -1,0 +1,42 @@
+.send-title {
+    color: #469D14;
+}
+
+.send-contact__list {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.send-contact__list-item span {
+    font-weight: bold;
+}
+
+.send-desc-btn {
+    font-size: 16px;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
+.special-offers-container {
+    
+}
+
+.special-offers__container-title {
+    background: #28a745;
+    background: url(/dist/img/tiles-bw.webp),linear-gradient(140deg,#28a745 10%,#28a745);
+    color: #fff;
+    padding: 15px 0;
+    text-transform: uppercase;
+}
+
+.special-offers__title {
+    font-size: 22px;
+    margin-bottom: 0px;
+}
+
+.special-offers__subtitle {
+    font-size: 14px;
+    margin-bottom: 0px;
+}
