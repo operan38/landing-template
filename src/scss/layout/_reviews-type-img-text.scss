@@ -1,0 +1,39 @@
+.reviews-type-img-text__card {
+    display: flex;
+    margin-bottom: 35px;
+    border-right: 2px solid #969491;
+    border-bottom: 2px solid #969491;
+    padding: 10px 20px 39px 0;
+}
+
+.reviews-type-img-text__card-img {
+    padding-right: 25px;
+}
+
+.reviews-type-img-text__card-title {
+    text-align: center;
+    line-height: 60px;
+    background: url('../img/reviews__stars.png') no-repeat;
+    background-position: 50% 100%;
+    font-size: 24px;
+}
+
+@media (max-width: 992px){
+
+    .reviews-type-img-text__card {
+        flex-direction: column;
+        margin-bottom: 25px;
+        border-right: 0px solid #969491;
+        padding: 10px 10px 10px 0;
+    }
+
+    .reviews-type-img-text__card-title {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .reviews-type-img-text__card-img {
+        padding-right: 0px;
+        text-align: center;
+    }
+}

@@ -13,3 +13,17 @@
 .callback-form__order-title1 {
     font-size: 48px;
 }
+
+.callback-form__order-title2 {
+    font-size: 20px;
+}
+
+@media (max-width: 576px) {
+    .callback-form__order-title1 {
+        font-size: 28px;
+    }
+
+    .callback-form__order-title2 {
+        font-size: 14px;
+    }
+}

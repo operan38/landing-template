@@ -67,6 +67,13 @@ $(document).ready(function(){
         $(this).children('.faq-list__item-arrow').toggleClass('openned');
     })
 
+    /* characteristics-form */
+
+    $('.js-characteristics__btn-order').on('click', function(){
+        $('.js-product-input-modal').val('');
+        $('.js-product-title-modal').html('');
+    });
+
     /* js-btn-up-page */
 
     $(window).on('scroll', function () {

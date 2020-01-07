@@ -1,0 +1,46 @@
+.characteristics-form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/dist/img/characteristics-form/background.jpg');
+}
+
+.characteristics-form__title {
+    margin-bottom: 0px;
+    font-size: 40px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.characteristics-form__desc {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.characteristics-form__advantages-list-title {
+    font-size: 22px;
+}
+
+.characteristics-form__advantages-list__item {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 576px){
+    .characteristics-form {
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/dist/img/characteristics-form/background-m.jpg');
+    }
+
+    .characteristics-form__title {
+        font-size: 36px;
+    }
+    
+    .characteristics-form__desc {
+        font-size: 16px;
+    }
+
+    .characteristics-form-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}

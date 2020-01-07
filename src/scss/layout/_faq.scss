@@ -48,3 +48,9 @@
         transform: rotate(-180deg);
     }
 }
+
+@media (max-width: 576px) {
+    .faq-list__item-title {
+        font-size: 20px;
+    }
+}

@@ -1,11 +1,8 @@
-<section class="center-form pb-3 pt-3 mb-1" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/dist/img/center-form/background.jpg)/*background: url(/dist/img/tiles-bw.webp),linear-gradient(140deg,#fff 50%,#fff	);*/">
+<section class="center-form pb-3 pt-3 mb-1">
     <div class="container-fluid section-container">
         <div class="row">
-            <div class="col-lg-7 col-12 center-form-img-col">
-                <!--<div class="center-form__img">
-                    <img src="/dist/img/center-form/1.png" alt="Тест">
-                </div>-->
-                <div class="d-flex flex-column justify-content-between h-100 pb-2">
+            <div class="col-lg-7 col-12">
+                <div class="center-form-container-product pb-2">
                     <div class="center-form-container__title">
                         <div class="center-form__title">
                             Заголовок тут...
@@ -13,23 +10,6 @@
                         <div class="center-form__desc">
                             Описание тут...
                         </div>
-        
-                        <!--<div class="center-form__advantages-list">
-                            <div class="center-form__advantages-list__item">
-                                <p>
-                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
-                                    Пункт 1
-                                </p>
-                                <p>
-                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
-                                    Пункт 2
-                                </p>
-                                <p>
-                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
-                                    Пункт 3
-                                </p>
-                            </div>
-                        </div>-->
                     </div>
                     <div>
                         <a class="btn btn-yellow center-form__btn w-100" id="js-goToCatalogBtn" href="#catalog">Перейти в каталог</a>
@@ -48,12 +28,12 @@
                     чтобы уточнить детали доставки</p>
                     <form method="POST" action="send.php">
                         <div class="form-group center-form__form-group">
-                            <label>Введите ваше имя</label>
-                            <input type="text" class="form-control" name="client" required>
+                            <label for="centerFormClient">Введите ваше имя</label>
+                            <input type="text" class="form-control" name="client" id="centerFormClient" required>
                         </div>
                         <div class="form-group center-form__form-group">
-                            <label>Введите ваш контактный телефон</label>
-                            <input type="text" class="form-control" name="phone" required>
+                            <label for="centerFormPhone">Введите ваш контактный телефон</label>
+                            <input type="text" class="form-control" name="phone" id="centerFormPhone" required>
                         </div>
                         <button type="submit" class="btn btn-yellow btn-yellow-lg w-100">Оформить заказ</button>
                         <div class="deadline__text">
