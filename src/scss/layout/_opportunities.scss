@@ -1,0 +1,33 @@
+.opportunities__list-title {
+    margin-bottom: 5px;
+}
+
+.opportunities__list {
+    margin: 0px;
+    padding: 0px;
+    padding-left: 40px;
+}
+
+.opportunities__list-item {
+    margin-bottom: 5px;
+}
+
+.opportunities-img {
+    text-align: center;
+}
+
+@media (max-width: 576px){
+    .opportunities-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .opportunities__list-title {
+        font-size: 22px;
+    }
+
+    .opportunities__title {
+        font-size: 28px;
+    }
+}
