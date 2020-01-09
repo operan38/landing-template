@@ -7,3 +7,9 @@
 .certificates-container {
     max-width: 800px;
 }
+
+@media (max-width: 576px) {
+    .certificates-title {
+        font-size: 22px;
+    }
+}

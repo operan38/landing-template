@@ -21,3 +21,9 @@
         height: 300px;
     }
 }
+
+@media (max-width: 576px) {
+    .video-review-title {
+        font-size: 28px;
+    }
+}

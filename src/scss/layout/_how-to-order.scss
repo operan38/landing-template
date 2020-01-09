@@ -30,6 +30,14 @@
     margin-bottom: 5px;
 }
 
-.how-to-order__desc {
+@media (max-width: 992px) {
+    .how-to-order__fa-list-item {
+        margin-bottom: 10px;
+    }
+}
 
+@media (max-width: 576px) {
+    .how-to-order-top__title {
+        font-size: 28px;
+    }
 }

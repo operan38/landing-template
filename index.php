@@ -14,6 +14,7 @@
     //require_once('template/simple-block-1.html');
     require_once('template/reviews.html');
     require_once('template/reviews-type-img-text.html');
+    require_once('template/reviews-type-img.html');
     require_once('template/faq.html');
     require_once('template/callback-form.html');
     require_once('template/contact-form.html');

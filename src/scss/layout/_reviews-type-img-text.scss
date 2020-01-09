@@ -37,3 +37,9 @@
         text-align: center;
     }
 }
+
+@media (max-width: 576px) {
+    .reviews-type-img-text-title {
+        font-size: 26px;
+    }
+}

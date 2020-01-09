@@ -1,0 +1,20 @@
+.reviews-type-img__card-img {
+    text-align: center;
+}
+
+.reviews-type-img__card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+    .reviews-type-img__card-img  {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .reviews-type-img-title {
+        font-size: 26px;
+    }
+}

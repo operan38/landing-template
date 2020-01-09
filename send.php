@@ -75,7 +75,7 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
                                 Спец товар 1
                             </div>
                             <div class="custom-card__img">
-                                <img src="/dist/img/special-offers/1.png">
+                                <img src="/dist/img/special-offers/1.jpg">
                             </div>
                             <div>
                                 <div class="custom-card__desc">
@@ -104,7 +104,7 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
                                 Спец товар 2
                             </div>
                             <div class="custom-card__img">
-                                <img src="/dist/img/special-offers/2.png">
+                                <img src="/dist/img/special-offers/2.jpg">
                             </div>
                             <div>
                                 <div class="custom-card__desc">
@@ -133,7 +133,7 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
                                 Спец товар 3
                             </div>
                             <div class="custom-card__img">
-                                <img src="/dist/img/special-offers/3.png">
+                                <img src="/dist/img/special-offers/3.jpg">
                             </div>
                             <div>
                                 <div class="custom-card__desc">

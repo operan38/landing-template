@@ -52,3 +52,9 @@
     background-position: 50% 100%;
 
 }
+
+@media (max-width: 576px) {
+    .reviews-title {
+        font-size: 26px;
+    }
+}
