@@ -19,10 +19,6 @@
     font-style: italic;
 }
 
-.special-offers-container {
-    
-}
-
 .special-offers__container-title {
     background: #28a745;
     background: url(/dist/img/tiles-bw.webp),linear-gradient(140deg,#28a745 10%,#28a745);
@@ -39,4 +35,23 @@
 .special-offers__subtitle {
     font-size: 14px;
     margin-bottom: 0px;
+}
+
+.gift-form {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #c0c0c0;
+    padding: 16px;
+    max-width: 450px;
+}
+
+@media (max-width: 576px) {
+    .gift-form__title {
+        font-size: 26px;
+    }
+
+    .gift-form__text {
+        font-size: 15px;
+    }
 }
