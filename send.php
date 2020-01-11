@@ -6,6 +6,7 @@ $email = 'good.pc2013@yandex.ru'; // Почта
 $from = 'sbrpc.ru'; // Сайт
 $subject = 'Тестовый заказ'; // Тема письма
 $catalogTitle = 'Товар'; // Наименование из каталога
+$isVisibleSpecialOffers = false; // Отображение специальных предложений true = отображать, false = скрыть.
 
 $headers  =  'MIME-Version: 1.0' . "\r\n";
 $headers .=  'Content-type: text/html; charset=UTF-8' . "\r\n";
@@ -20,11 +21,13 @@ $message = "
     <p>Телефон: ".$_POST['phone']."</p>
     <p>IP-адрес посетителя: ".@$_SERVER['REMOTE_ADDR']."</p>";
 
+$content = '';
+
 if (!empty($_POST['client']) && !empty($_POST['phone'])) {
 
     require_once('template/header.php');
 
-    echo 
+    $content =
     '
     <style type="text/css">
         body {
@@ -57,109 +60,116 @@ if (!empty($_POST['client']) && !empty($_POST['phone'])) {
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="special-offers">
-            <div class="container-fluid special-offers-container">
-                <div class="row no-gutters mb-3">
-                    <div class="col-12">
-                        <div class="special-offers__container-title text-center">
-                            <p class="special-offers__title">Для новых клиентов у нас есть эксклюзивные предложения!</p>
-                            <p class="special-offers__subtitle">С индивидуальной скидкой вы можете заказать следующие товары:</p>
+        </section>';
+        
+        if ($isVisibleSpecialOffers) {
+            $content .=
+            '<section class="special-offers">
+                <div class="container-fluid special-offers-container">
+                    <div class="row no-gutters mb-3">
+                        <div class="col-12">
+                            <div class="special-offers__container-title text-center">
+                                <p class="special-offers__title">Для новых клиентов у нас есть эксклюзивные предложения!</p>
+                                <p class="special-offers__subtitle">С индивидуальной скидкой вы можете заказать следующие товары:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="custom-card">
+                                <div class="custom-card__title">
+                                    Спец товар 1
+                                </div>
+                                <div class="custom-card__img">
+                                    <img src="/dist/img/special-offers/1.jpg">
+                                </div>
+                                <div>
+                                    <div class="custom-card__desc">
+                                        Описание... test test  test test test test test test test test test test test test
+                                    </div>
+                                    <ul class="custom-card__list">
+                                        <li>Цвет: 123456</li>
+                                        <li>Размер: 123456</li>
+                                        <li>Материал: 123456</li>
+                                    </ul>
+                                    <div class="custom-card__order-price">
+                                        <p class="custom-card__order-price__old-price">2 999Р</p>
+                                        <p class="custom-card__order-price__new-price">999Р</p>
+                                    </div>
+                                    <a class="btn btn-success w-100" style="color: #fff" href="/">
+                                        Заказать
+                                    </a>
+                                </div>
+            
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-4">
+                            <div class="custom-card">
+                                <div class="custom-card__title">
+                                    Спец товар 2
+                                </div>
+                                <div class="custom-card__img">
+                                    <img src="/dist/img/special-offers/2.jpg">
+                                </div>
+                                <div>
+                                    <div class="custom-card__desc">
+                                        Описание... test test  test test test test test test test test test test test test
+                                    </div>
+                                    <ul class="custom-card__list">
+                                        <li>Цвет: 123456</li>
+                                        <li>Размер: 123456</li>
+                                        <li>Материал: 123456</li>
+                                    </ul>
+                                    <div class="custom-card__order-price">
+                                        <p class="custom-card__order-price__old-price">2 999Р</p>
+                                        <p class="custom-card__order-price__new-price">999Р</p>
+                                    </div>
+                                    <a class="btn btn-success w-100" style="color: #fff" href="/">
+                                        Заказать
+                                    </a>
+                                </div>
+            
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-4">
+                            <div class="custom-card">
+                                <div class="custom-card__title">
+                                    Спец товар 3
+                                </div>
+                                <div class="custom-card__img">
+                                    <img src="/dist/img/special-offers/3.jpg">
+                                </div>
+                                <div>
+                                    <div class="custom-card__desc">
+                                        Описание... test test  test test test test test test test test test test test test
+                                    </div>
+                                    <ul class="custom-card__list">
+                                        <li>Цвет: 123456</li>
+                                        <li>Размер: 123456</li>
+                                        <li>Материал: 123456</li>
+                                    </ul>
+                                    <div class="custom-card__order-price">
+                                        <p class="custom-card__order-price__old-price">2 999Р</p>
+                                        <p class="custom-card__order-price__new-price">999Р</p>
+                                    </div>
+                                    <a class="btn btn-success w-100" style="color: #fff" href="/">
+                                        Заказать
+                                    </a>
+                                </div>
+            
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-lg-4">
-                        <div class="custom-card">
-                            <div class="custom-card__title">
-                                Спец товар 1
-                            </div>
-                            <div class="custom-card__img">
-                                <img src="/dist/img/special-offers/1.jpg">
-                            </div>
-                            <div>
-                                <div class="custom-card__desc">
-                                    Описание... test test  test test test test test test test test test test test test
-                                </div>
-                                <ul class="custom-card__list">
-                                    <li>Цвет: 123456</li>
-                                    <li>Размер: 123456</li>
-                                    <li>Материал: 123456</li>
-                                </ul>
-                                <div class="custom-card__order-price">
-                                    <p class="custom-card__order-price__old-price">2 999Р</p>
-                                    <p class="custom-card__order-price__new-price">999Р</p>
-                                </div>
-                                <a class="btn btn-success w-100" style="color: #fff" href="/">
-                                    Заказать
-                                </a>
-                            </div>
-        
-                        </div>
-                    </div>
+            <section>';
+        }
 
-                    <div class="col-12 col-lg-4">
-                        <div class="custom-card">
-                            <div class="custom-card__title">
-                                Спец товар 2
-                            </div>
-                            <div class="custom-card__img">
-                                <img src="/dist/img/special-offers/2.jpg">
-                            </div>
-                            <div>
-                                <div class="custom-card__desc">
-                                    Описание... test test  test test test test test test test test test test test test
-                                </div>
-                                <ul class="custom-card__list">
-                                    <li>Цвет: 123456</li>
-                                    <li>Размер: 123456</li>
-                                    <li>Материал: 123456</li>
-                                </ul>
-                                <div class="custom-card__order-price">
-                                    <p class="custom-card__order-price__old-price">2 999Р</p>
-                                    <p class="custom-card__order-price__new-price">999Р</p>
-                                </div>
-                                <a class="btn btn-success w-100" style="color: #fff" href="/">
-                                    Заказать
-                                </a>
-                            </div>
-        
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="custom-card">
-                            <div class="custom-card__title">
-                                Спец товар 3
-                            </div>
-                            <div class="custom-card__img">
-                                <img src="/dist/img/special-offers/3.jpg">
-                            </div>
-                            <div>
-                                <div class="custom-card__desc">
-                                    Описание... test test  test test test test test test test test test test test test
-                                </div>
-                                <ul class="custom-card__list">
-                                    <li>Цвет: 123456</li>
-                                    <li>Размер: 123456</li>
-                                    <li>Материал: 123456</li>
-                                </ul>
-                                <div class="custom-card__order-price">
-                                    <p class="custom-card__order-price__old-price">2 999Р</p>
-                                    <p class="custom-card__order-price__new-price">999Р</p>
-                                </div>
-                                <a class="btn btn-success w-100" style="color: #fff" href="/">
-                                    Заказать
-                                </a>
-                            </div>
-        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <section>
-    </section>
+        $content .='</section>
     ';
+
+    echo $content;
 
     $mail=mail($email, $subject, $message, $headers);
 

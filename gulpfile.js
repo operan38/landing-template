@@ -1,39 +1,47 @@
-var gulp = require('gulp'),
-	cssnano = require('gulp-cssnano'),
+const gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
-	sass = require('gulp-sass'),
-	plumber = require('gulp-plumber'),
-	sourcemaps = require('gulp-sourcemaps'),
-	rename = require('gulp-rename');
+    sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+	uglify = require('gulp-uglify');
 
-var pathScss = {
-	in: 'src/scss/**/*.scss',
-	out: 'dist/css'
+const root = '',
+    scss = root + 'src/scss/',
+    js = root + 'src/js/',
+    jsDist = root + 'dist/js/';
+
+const styleWatchFiles = scss + '**/*.scss';
+
+const jsSrc = [
+	'libs/jquery/jquery-3.4.1.min.js',
+	'libs/bootstrap/js/bootstrap.bundle.min.js',
+	'libs/slick/slick.min.js',
+	'src/js/**/*.js'
+];
+
+function css() {
+	return gulp.src(scss + 'main.scss', { sourcemaps: true })
+	.pipe(sass({
+		outputStyle: 'compressed'
+	}).on('error', sass.logError))
+	.pipe(autoprefixer('last 2 versions'))
+	.pipe(gulp.dest('dist/css', { sourcemaps: '.' }));
 }
 
-gulp.task('scss:dev', function () {
-	return gulp
-		.src(pathScss.in) // Выбираем scss файлы
-		.pipe(plumber()) // Обработка ошибки в плагине без выброса из консоли
-		.pipe(sourcemaps.init()) // Иницилизация sourcemaps
-		.pipe(sass()) // Компилируем в css
-		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) //Проставляем автопрефиксы
-		.pipe(cssnano()) // Удаляем пробелы и табуляции
-		.pipe(rename('static.min.css')) // Переименование входного файла
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(pathScss.out)); // Выгружаем в папку css
-})
+function javascript() {
+	return gulp.src(['libs/jquery/jquery-3.4.1.min.js', 'libs/bootstrap/js/bootstrap.bundle.min.js', 'libs/slick/slick.min.js', 'src/js/**/*.js'])
+	.pipe(concat('main.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest(jsDist));
+}
 
-gulp.task('scss:prod', function () {
-	return gulp
-		.src(pathScss.in) // Выбираем scss файлы
-		.pipe(sass()) // Компилируем в css
-		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) //Проставляем автопрефиксы
-		.pipe(cssnano()) // Удаляем пробелы и табуляции
-		.pipe(rename('static.min.css')) // Переименование входного файла
-		.pipe(gulp.dest(pathScss.out)); // Выгружаем в папку css
-});
+function watch() {
+    gulp.watch(styleWatchFiles, css);
+    gulp.watch(jsSrc, javascript);
+}
 
-gulp.task('default', ['scss:dev'], function () { // Запускаем таск по умолчанию вместе с таском scss и отслеживаем изменения
-	gulp.watch(pathScss.in, ['scss:dev']);
-});
+exports.css = css;
+exports.javascript = javascript;
+exports.watch = watch;
+
+const build = gulp.series(watch);
+gulp.task('default', build);

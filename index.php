@@ -6,6 +6,7 @@
     require_once('template/product-form-modal.html');
     require_once('template/center-form.html');
     require_once('template/catalog-6col.html');
+    require_once('template/gallery.php');
     require_once('template/characteristics-form.html');
     require_once('template/why-us.html');
     require_once('template/certificates.html');
