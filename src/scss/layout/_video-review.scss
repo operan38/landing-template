@@ -3,20 +3,54 @@
     padding: 20px 0;
 }
 
-.thumb-wrap {
+/*.thumb-wrap {
     width: 100%;
     height: auto;
     max-height: 100%;
     text-align: center;
-}
+}*/
 
-.thumb-wrap iframe {
+/*.thumb-wrap iframe {
+    width: 500px;
+    height: 300px;
+}*/
+
+.video-review-youtube {
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: all 200ms ease-out;
+    cursor: pointer;
     width: 500px;
     height: 300px;
 }
 
+.video-review-youtube__iframe {
+    width: 500px;
+    height: 300px;
+}
+
+.video-review-youtube .play {
+    background: url('/dist/img/yt-icon-dark.png') no-repeat;
+    position: absolute;
+    height: 53px;
+    width: 75px;
+    transition: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.video-review-youtube:hover .play {
+    background: url('/dist/img/yt-icon-red.png') no-repeat;
+}
+
 @media (max-width: 992px) {
-    .thumb-wrap iframe {
+    .video-review-youtube, .video-review-youtube__iframe {
         width: 100%;
         height: 300px;
     }
