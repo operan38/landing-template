@@ -89,10 +89,15 @@ $(document).ready(function(){
     /* catalog-form - product-form-modal */
 
     $('.js-catalog-card__btn-order').on('click', function(){
-        var cardTitle = $(this).parent().parent().children('.js-catalog-card__title').html().trim();
-        $('.js-product-input-modal').val(cardTitle);
-        $('.js-product-title-modal').html(cardTitle);
+        var $cardTitle = $(this).parent().parent().children('.js-catalog-card__title');
+        $('.js-product-input-modal').val($cardTitle.html().trim());
+        $('.js-product-title-modal').html($cardTitle.html().trim());
+        $('.js-products-modal').val($cardTitle.attr('data-id') + ';1;' + $cardTitle.attr('data-price'));
     })
+
+    /*$('.product-form-modal').on('shown.bs.modal', function () {
+
+    });*/
 
     /* faq */
 

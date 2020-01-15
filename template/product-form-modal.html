@@ -8,15 +8,22 @@
             </div>
             <form method="POST" action="send.php">
                 <div class="modal-body">
+                    <input type="hidden" name="PartnerId" value="1825"/>
+                    <input class="js-products-modal" type="hidden" name="Products"/>
+                    <input type="hidden" name="ProductUpsellPackageId" value="2363"/>
+                    <input type="hidden" name="ProcessingType" value="3"/>
+                    <input type="hidden" name="RedirectUrl" value="http://sbrpc.ru/send.php"/>
+                    <input type="hidden" name="TimeZone"/>
+
                     <div class="form-group text-center">
                         <h5 class="js-product-title-modal"></h5>
                         <input type="hidden" class="form-control js-product-input-modal" name="product">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="client" placeholder="ИМЯ" required>
+                        <input type="text" class="form-control" name="Name" placeholder="ИМЯ" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="phone" placeholder="ТЕЛЕФОН" required>
+                        <input type="text" class="form-control" name="Phone" placeholder="ТЕЛЕФОН" required>
                     </div>
                 </div>
                 <div class="modal-footer">
