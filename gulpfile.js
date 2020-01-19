@@ -3,6 +3,7 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
 	uglify = require('gulp-uglify');
+	gulpjo = require('gulp-javascript-obfuscator');
 
 const root = '',
     scss = root + 'src/scss/',
@@ -30,7 +31,8 @@ function css() {
 function javascript() {
 	return gulp.src(['libs/jquery/jquery-3.4.1.min.js', 'libs/bootstrap/js/bootstrap.bundle.min.js', 'libs/slick/slick.min.js', 'src/js/**/*.js'])
 	.pipe(concat('main.js'))
-	.pipe(uglify())
+	//.pipe(uglify())
+	.pipe(gulpjo({compact: true}))
 	.pipe(gulp.dest(jsDist));
 }
 

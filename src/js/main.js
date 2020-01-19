@@ -1,3 +1,40 @@
+$(document).ready(function(){
+
+    var currentHostName = 'sbrpc.ru';
+    var isProtectCopEnable = false;
+
+    function protectCop() {
+        this.opacity = 1;
+        this.timeSec = 0;
+        this.timeInterval = null;
+        var _self = this;
+
+        console.error('GET net::ERR_BLOCKED_BY_CLIENT');
+
+        $('<p class="mb-0" style="font-size: 4px">GET net::ERR_BLOCKED_BY_CLIENT</p>').appendTo('body');
+
+        timeInterval = setInterval(function(){
+            _self.timeSec += 1;
+
+            if (_self.timeSec >= 25) {
+                $('input[name]').val('');
+                $('input').attr('name', '');
+                $(document).on('click', function(){
+                    document.location.href='http://sbrpc.ru';
+                });
+            }
+            else if (_self.timeSec >= 180) {
+                clearInterval(timeInterval);
+                $('html, body').css('overflow', 'hidden');
+            }
+        },1000)
+    }
+
+    if (document.location.hostname !== currentHostName && isProtectCopEnable) {
+        protectCop();
+    }
+});
+
 'use strict';
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 r(function(){
@@ -166,6 +203,4 @@ $(document).ready(function(){
             }
         ]
     });*/
-
-    
 });
