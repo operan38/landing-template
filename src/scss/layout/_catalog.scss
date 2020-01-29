@@ -3,8 +3,66 @@
     padding: 20px 0;
 }
 
+.catalog-1col__title {
+    font-size: 32px;
+    text-align: center;
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.catalog-1col-desc {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.catalog-1col__order-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .catalog-1col__order-price__new-price {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .catalog-1col__order-price__old-price {
+        font-size: 18px;
+        text-decoration: line-through;
+        margin-left: 15px;
+        position: relative;
+        color: #8B0000;
+        font-weight: bold;
+    }
+}
+
 @media (max-width: 576px) {
     .catalog-title {
         font-size: 28px;
+    }
+
+    .catalog-1col__title {
+        font-size: 24px;
+    }
+
+    .catalog-1col__order-price {
+
+        .catalog-1col__order-price__new-price {
+            font-size: 28px;
+        }
+    
+        .catalog-1col__order-price__old-price {
+            font-size: 16px;
+        }
+    }
+
+    .catalog-1col-img img {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 }

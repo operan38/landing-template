@@ -6,13 +6,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="send.php">
+            <form method="POST" action="send.php">  <!-- action: (колл центр: https://platforma.fulfilment.biz/api/Order/Add; почта: send.php) -->
                 <div class="modal-body">
-                    <input type="hidden" name="PartnerId" value="1825"/>
-                    <input class="js-products-modal" type="hidden" name="Products"/>
-                    <input type="hidden" name="ProductUpsellPackageId" value="2363"/>
+                    
+                    <input type="hidden" name="PartnerId" value="1825"/> <!-- value: i пользователя -->
+                    <input class="js-products-modal" type="hidden" name="Products"/> <!--  value: берется с каталога -->
+                    <input type="hidden" name="ProductUpsellPackageId" value="2363"/> <!--  value: id upsell -->
                     <input type="hidden" name="ProcessingType" value="3"/>
-                    <input type="hidden" name="RedirectUrl" value="http://sbrpc.ru/send.php"/>
+                    <input type="hidden" name="RedirectUrl" value="http://sbrpc.ru/sendCall.php"/> <!--  value: перенаправление на sendCall.php -->
                     <input type="hidden" name="TimeZone"/>
 
                     <div class="form-group text-center">

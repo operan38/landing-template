@@ -5,13 +5,15 @@
                 <div class="callback-form__form">
                     <h1 class="callback-form__order-title1">Остались вопросы?</h1>
                     <h5 class="callback-form__order-title2">Заполните форму и мы вам перезвоним</h5>
-                    <form method="POST" action="send.php">
-                        <input type="hidden" name="PartnerId" value="1825"/>
-                        <input type="hidden" name="Products" value="5232;1;1890"/>
-                        <input type="hidden" name="ProductUpsellPackageId" value="2363"/>
+                    <form method="POST" action="send.php">  <!-- action: (колл центр: https://platforma.fulfilment.biz/api/Order/Add; почта: send.php) -->
+
+                        <input type="hidden" name="PartnerId" value="1825"/> <!-- value: i пользователя -->
+                        <input type="hidden" name="Products" value="5232;1;1890"/> <!--  value: id продукта;количество;цена -->
+                        <input type="hidden" name="ProductUpsellPackageId" value="2363"/> <!--  value: id upsell -->
                         <input type="hidden" name="ProcessingType" value="3"/>
-                        <input type="hidden" name="RedirectUrl" value="http://sbrpc.ru/send.php"/>
+                        <input type="hidden" name="RedirectUrl" value="http://sbrpc.ru/sendCall.php"/> <!--  value: перенаправление на sendCall.php -->
                         <input type="hidden" name="TimeZone"/>
+
                         <div class="form-group callback-form__form-group">
                             <label for="callbackFormClient">Введите ваше имя</label>
                             <input type="text" class="form-control" name="Name" id="callbackFormClient" required>

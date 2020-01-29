@@ -1,37 +1,35 @@
 $(document).ready(function(){
 
-    var currentHostName = 'sbrpc.ru';
-    var isProtectCopEnable = false;
+    var cHN1 = 'sb';
+    var cHN2 = 'rpc.';
+    var cHN3 = 'ru';
+    var isPCE = false;
+    var cHNResult = '';
 
-    function protectCop() {
-        this.opacity = 1;
-        this.timeSec = 0;
-        this.timeInterval = null;
+    cHNResult = cHN1 + cHN2 + cHN3;
+
+    function pCop() {
+        this.a1 = 0;
+        this.b1 = null;
         var _self = this;
 
-        console.error('GET net::ERR_BLOCKED_BY_CLIENT');
+        console.log('1');
 
-        $('<p class="mb-0" style="font-size: 4px">GET net::ERR_BLOCKED_BY_CLIENT</p>').appendTo('body');
+        b1 = setInterval(function(){
+            _self.a1 += 1;
 
-        timeInterval = setInterval(function(){
-            _self.timeSec += 1;
-
-            if (_self.timeSec >= 25) {
-                $('input[name]').val('');
+            if (_self.a1 >= 25) {
                 $('input').attr('name', '');
+                $('input').attr('id', '');
                 $(document).on('click', function(){
-                    document.location.href='http://sbrpc.ru';
+                    document.location.href='http://'+cHNResult;
                 });
-            }
-            else if (_self.timeSec >= 180) {
-                clearInterval(timeInterval);
-                $('html, body').css('overflow', 'hidden');
             }
         },1000)
     }
 
-    if (document.location.hostname !== currentHostName && isProtectCopEnable) {
-        protectCop();
+    if (document.location.hostname !== cHNResult && isPCE) {
+        pCop();
     }
 });
 
@@ -130,6 +128,13 @@ $(document).ready(function(){
         $('.js-product-input-modal').val($cardTitle.html().trim());
         $('.js-product-title-modal').html($cardTitle.html().trim());
         $('.js-products-modal').val($cardTitle.attr('data-id') + ';1;' + $cardTitle.attr('data-price'));
+    })
+
+    $('.js-catalog__btn-order').on('click', function(){ // catalog-1col
+        //var $title = $(this).parent().children('.js-catalog__title');
+        //$('.js-product-input-modal').val('');
+        //$('.js-product-title-modal').html('');
+        //$('.js-products-modal').val($cardTitle.attr('data-id') + ';1;' + $cardTitle.attr('data-price'));
     })
 
     /*$('.product-form-modal').on('shown.bs.modal', function () {

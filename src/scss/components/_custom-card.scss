@@ -28,6 +28,10 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    span {
+        font-weight: bold;
+    }
 }
 
 .custom-card__order-price {
@@ -39,6 +43,7 @@
 
     .custom-card__order-price__new-price {
         font-size: 24px;
+        font-weight: bold;
     }
 
     .custom-card__order-price__old-price {
@@ -46,18 +51,22 @@
         text-decoration: line-through;
         margin-right: 15px;
         position: relative;
+        color: #8B0000;
+        font-weight: bold;
     }
 }
 
 .custom-card__btn {
     background: #fee48f;
     background: linear-gradient(180deg,#fee48f 0%,#f9b334 100%);
-    box-shadow: 0 2px 0 0 rgba(255,150,0,.004), 0 10px 35px 0 rgba(255,150,0,.3), inset 0 2px 0 0 rgba(255,254,204,.004);
-    border-bottom: 2px solid #ff9600;
+    border-bottom: 2px solid rgba(255, 150, 0, 0.5);
+    border-left: 1px solid rgba(255, 150, 0, 0.5);
+    border-right: 1px solid rgba(255, 150, 0, 0.5);
+    border-top: 1px solid rgba(255, 150, 0, 0.5);
     color: #7f350c;
     border-radius: 7px;
     text-transform: uppercase;
-    padding: 10px 10px;
+    padding: 8px 10px;
     transition: .3s;
     display: block;
     position: relative;
@@ -65,6 +74,12 @@
     font-weight: 700;
     cursor: pointer;
     font-size: 16px;
+    width: 100%;
+    outline: none;
+
+    &:hover {
+        box-shadow: 0 2px 0 0 rgba(255,150,0,.004), 0 10px 35px 0 rgba(255,150,0,.3), inset 0 2px 0 0 rgba(255,254,204,.004);
+    }
 }
 
 @media (max-width: 576px) {

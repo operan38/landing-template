@@ -18,14 +18,14 @@ $headers .=  'Content-type: text/html; charset=UTF-8' . "\r\n";
 $headers .=  'To: <'.$email.'>, '."\r\n";
 $headers .=  'From: <'.$from.'>' . "\r\n";
 
-if(empty($_POST['product']))
+/*if(empty($_POST['product']))
     $_POST['product'] = 'Не указан';
 
 $message = "
     <p>".$catalogTitle.': '.$_POST['product']."</p>
     <p>Имя: ".$_POST['Name']."</p>
     <p>Телефон: ".$_POST['Phone']."</p>
-    <p>IP-адрес посетителя: ".@$_SERVER['REMOTE_ADDR']."</p>";
+    <p>IP-адрес посетителя: ".@$_SERVER['REMOTE_ADDR']."</p>";*/
 
 if (!empty($_POST['email'])) {
     mail($email, $subjectGift, $_POST['email'], $headers);
@@ -34,7 +34,7 @@ if (!empty($_POST['email'])) {
 
 $content = '';
 
-if (!empty($_POST['Name']) && !empty($_POST['Phone'])) {
+//if (!empty($_POST['Name']) && !empty($_POST['Phone'])) {
 
     require_once('template/header.php');
 
@@ -54,16 +54,16 @@ if (!empty($_POST['Name']) && !empty($_POST['Phone'])) {
                             <h1 class="send-title">Спасибо, Ваш заказ принят!</h1>
                             <p class="send-desc">Наш оператор свяжется с вами в течение 30 минут</p>
                         </div>
-                        <div>
+                        <!--<div>
                             <p class="send-contact__title">Вы указали следующие контактные данные:</p>
                             <ul class="send-contact__list">
                                 <li class="send-contact__list-item"><span>Имя:</span> '.$_POST['Name'].'</li>
                                 <li class="send-contact__list-item"><span>Телефон:</span> '.$_POST['Phone'].'</li>
                                 <li class="send-contact__list-item"><span>'.$catalogTitle.':</span> '.$_POST['product'].'</li>
                             </ul>
-                        </div>
+                        </div>-->
                         <div>
-                            <p class="send-desc-btn">Если вы допустили ошибку, вернитесь на сайт и оставьте заказ еще раз</p>
+                            <!--<p class="send-desc-btn">Если вы допустили ошибку, вернитесь на сайт и оставьте заказ еще раз</p>-->
                             <div class="mt-2">
                                 <a href="/" class="btn btn-success">Вернуться</a>
                             </div>
@@ -281,12 +281,12 @@ if (!empty($_POST['Name']) && !empty($_POST['Phone'])) {
 
     echo $content;
 
-    $mail = mail($email, $subject, $message, $headers);
+    //$mail = mail($email, $subject, $message, $headers);
 
     require_once('template/footer.php');
-}
+/*}
 else if (empty($_POST['email'])) {
     echo 'Не указано имя или номер телефона';
-}
+}*/
 
 ?>

@@ -20,19 +20,21 @@
                 <div class="center-form__order">
                     <h1 class="center-form__order-title1">Заказать товар</h1>
                     <div class="center-form__order-price">
-                        <p class="center-form__order-price__new-price">1 999Р</p>
-                        <p class="center-form__order-price__old-price">2 999Р</p>
+                        <p class="center-form__order-price__new-price">1 999₽</p>
+                        <p class="center-form__order-price__old-price">2 999₽</p>
                     </div>
                     <h4 class="center-form__order-title2">Заполните форму чтобы оформить заказ</h4>
                     <p class="center-form__order-desc">После отправки заявки, мы перезвоним,
                     чтобы уточнить детали доставки</p>
-                    <form action="send.php" method="POST">
-                        <input type="hidden" name="PartnerId" value="1825"/>
-                        <input type="hidden" name="Products" value="5232;1;1890"/>
-                        <input type="hidden" name="ProductUpsellPackageId" value="2363"/>
+                    <form action="sendCall.php" method="POST"> <!-- action: (колл центр: https://platforma.fulfilment.biz/api/Order/Add; почта: send.php) --> 
+
+                        <input type="hidden" name="PartnerId" value="1825"/> <!-- value: i пользователя -->
+                        <input type="hidden" name="Products" value="5232;1;1890"/> <!--  value: id продукта;количество;цена -->
+                        <input type="hidden" name="ProductUpsellPackageId" value="2363"/> <!--  value: id upsell -->
                         <input type="hidden" name="ProcessingType" value="3"/>
-                        <input type="hidden" name="RedirectUrl" value="http://sbrpc.ru/send.php"/>
+                        <input type="hidden" name="RedirectUrl" value="http://sbrpc.ru/sendCall.php"/> <!--  value: перенаправление на sendCall.php -->
                         <input type="hidden" name="TimeZone"/>
+
                         <div class="form-group center-form__form-group">
                             <label for="centerFormClient">Введите ваше имя</label>
                             <input type="text" class="form-control" name="Name" id="centerFormClient" required>

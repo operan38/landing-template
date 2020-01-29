@@ -1,3 +1,8 @@
 .section-container {
     max-width: 1280px;
 }
+
+.section-container-no-padding {
+    overflow: hidden;
+    padding: 0px;
+}
