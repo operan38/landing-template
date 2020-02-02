@@ -13,11 +13,9 @@ class Settings {
         if (file_exists($dir.'data.json')) {
             $file = file_get_contents($dir.'data.json');  // Открыть файл data.json
             $taskList = json_decode($file, true);  // Декодировать в массив
-            //var_dump($taskList);
             return $taskList;
         }
         else {
-            //var_dump(0);
             return NULL;
         }
     }

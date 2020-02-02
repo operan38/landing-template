@@ -21,9 +21,6 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex mt-2 mb-2 align-items-center">
-                            <form action="logout.php" method="POST">
-                                <button class="btn btn-sm btn-danger mr-2" type="submit"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
-                            </form>
                             <a class="btn btn-sm btn-secondary" href="/admin"><i class="fa fa-cogs" aria-hidden="true"></i></a>
                         </div>
                     </div>

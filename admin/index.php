@@ -11,11 +11,15 @@
 
     require_once('../template/header.php'); // Подключение header
 ?>
-
 <section class="admin">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <div class="d-flex mt-2 mb-2 align-items-center">
+                    <form action="logout.php" method="POST">
+                        <button class="btn btn-sm btn-danger mr-2" type="submit"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                    </form>
+                </div>
                 <?php if (isset($_SESSION['Message'])) { echo $_SESSION['Message']; unset($_SESSION['Message']); } ?>
             </div>
         </div>
