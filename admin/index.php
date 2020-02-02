@@ -15,11 +15,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex mt-2 mb-2 align-items-center">
-                    <form action="logout.php" method="POST">
-                        <button class="btn btn-sm btn-danger mr-2" type="submit"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
-                    </form>
-                </div>
                 <?php if (isset($_SESSION['Message'])) { echo $_SESSION['Message']; unset($_SESSION['Message']); } ?>
             </div>
         </div>
@@ -34,6 +29,11 @@
         <div class="container-fluid section-container">
             <div class="row">
                 <div class="col-12">
+                    <div class="d-flex mt-2 mb-2 align-items-center">
+                        <form action="logout.php" method="POST">
+                            <button class="btn btn-sm btn-danger mr-2" type="submit"><i class="fa fa-sign-out mr-1" aria-hidden="true"></i>Выйти</button>
+                        </form>
+                    </div>
                     <div class="d-flex flex-column justify-content-center mt-2 mb-2">
                         <form action="save.php" method="POST">
                             <div class="border p-4">
