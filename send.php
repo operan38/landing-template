@@ -1,14 +1,24 @@
 <?php
 
-$PAGE_TITLE = 'Ваш заказ принят!'; // <title> Страницы
+session_start();
 
-$email = 'good.pc2013@yandex.ru'; // Почта
-$from = 'sbrpc.ru'; // Сайт
-$subject = 'Тестовый заказ'; // Тема письма
+require_once('admin/settings/settings.php');
+$G_SETTINGS = Settings::load('admin/settings/');
+
+if (!isset($G_SETTINGS) || $G_SETTINGS === NULL) {
+    print('Файл data.json не найден');
+    exit();
+}
+
+$PAGE_TITLE = $G_SETTINGS['Send']['SendPageTitle'];; // <title> Страницы
+
+$email = $G_SETTINGS['Send']['Email']; // Почта
+$from = $G_SETTINGS['Send']['From']; // Сайт
+$subject = $G_SETTINGS['Send']['Subject']; // Тема письма
 $catalogTitle = 'Товар'; // Наименование из каталога
 // ----------
-$subjectGift = 'Тестовый заказ (e-mail подарок)'; // Тема письма для формы с подарками
-$isVisibleGift = true; // Отображение формы с подарками
+$subjectGift = $G_SETTINGS['Send']['SubjectGift']; // Тема письма для формы с подарками
+$isVisibleGift = (bool)$G_SETTINGS['Send']['isVisibleGift']; // Отображение формы с подарками
 // ----------
 $isVisibleSpecialOffers3col = false; // Отображение специальных предложений true = отображать, false = скрыть. (3 товара)
 $isVisibleSpecialOffers2col = false; // Отображение специальных предложений true = отображать, false = скрыть. (2 товара)
