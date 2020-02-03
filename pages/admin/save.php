@@ -3,14 +3,13 @@
 
         $templateDir = array_diff(scandir('./template'), array('..', '.', 'header.php', 'footer.php', '.htaccess'));
         $templateKeys = array();
-
         $moduleKeys = array(); // Ключи доп модуля
 
         foreach ($templateDir as $value) {
             $filename = pathinfo($value)['filename'];
             $templateKeys[$filename] = array('dir' => 'template/'.$value, 'active' => isset($_POST[$filename.'-active']) ? $_POST[$filename.'-active'] : '0', 
             'order' => isset($_POST[$filename.'-order']) ? $_POST[$filename.'-order'] : '99', 
-            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'adminModule' => $moduleKeys);
+            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'module' => isset($_POST[$filename.'-module']) ? $_POST[$filename.'-module'] : '');
         }
 
         uasort($templateKeys, function($a, $b){

@@ -57,11 +57,11 @@
                                     <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
                                         <div class="form-group">
                                             <label>Title страницы</label>
-                                            <input type="text" class="form-control js-settings-field" name="PageTitle" value="<?php echo $_SESSION['DataStorage']['General']['PageTitle'] ?>">
+                                            <input type="text" class="form-control js-settings-field" data-type="field" name="PageTitle" value="<?php echo $_SESSION['DataStorage']['General']['PageTitle'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Facebook метрика</label>
-                                            <textarea class="form-control js-settings-field" name="FacebookMetric" rows="8"><?php echo $_SESSION['DataStorage']['General']['FacebookMetric'] ?></textarea>
+                                            <textarea class="form-control js-settings-field" data-type="field" name="FacebookMetric" rows="8"><?php echo $_SESSION['DataStorage']['General']['FacebookMetric'] ?></textarea>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="template" role="tabpanel" aria-labelledby="template-tab">
@@ -95,7 +95,7 @@
                                                                         <label class="mb-0">Порядок</label>
                                                                     </div>
                                                                     <div class="col-9">
-                                                                        <input type="number" name="'.$key.'-order" class="form-control js-settings-field" value="'.$value['order'].'">
+                                                                        <input type="number" data-type="field" name="'.$key.'-order" class="form-control js-settings-field" value="'.$value['order'].'">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -105,7 +105,7 @@
                                                                         <label class="mb-0">Отображать</label>
                                                                     </div>
                                                                     <div class="col-8">
-                                                                        <select name="'.$key.'-active" class="form-control js-settings-field">';
+                                                                        <select name="'.$key.'-active" data-type="field" class="form-control js-settings-field">';
 
                                                 if ($value['active'] == '1') {
                                                     echo '<option value="0">false</option>
@@ -122,6 +122,8 @@
                                                 }
                                                 echo'</div>';
                                             }
+
+                                            //var_dump($template);
                                         ?>
                                     </div>
                                     <div class="tab-pane fade" id="send" role="tabpanel" aria-labelledby="send-tab">
@@ -132,19 +134,19 @@
                                             </div>
                                             <div class="form-group col-6">
                                                 <label>E-mail</label>
-                                                <input type="text" class="form-control js-settings-field" name="Email" value="<?php echo $_SESSION['DataStorage']['Send']['Email'] ?>">
+                                                <input type="text" class="form-control js-settings-field" data-type="field" name="Email" value="<?php echo $_SESSION['DataStorage']['Send']['Email'] ?>">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label>Title cтраницы</label>
-                                                <input type="text" class="form-control js-settings-field" name="SendPageTitle" value="<?php echo $_SESSION['DataStorage']['Send']['SendPageTitle'] ?>">
+                                                <input type="text" class="form-control js-settings-field" data-type="field" name="SendPageTitle" value="<?php echo $_SESSION['DataStorage']['Send']['SendPageTitle'] ?>">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label>Сайт (from)</label>
-                                                <input type="text" class="form-control js-settings-field" name="From" value="<?php echo $_SESSION['DataStorage']['Send']['From'] ?>">
+                                                <input type="text" class="form-control js-settings-field" data-type="field" name="From" value="<?php echo $_SESSION['DataStorage']['Send']['From'] ?>">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label>Тема письма (subject)</label>
-                                                <input type="text" class="form-control js-settings-field" name="Subject" value="<?php echo $_SESSION['DataStorage']['Send']['Subject'] ?>">
+                                                <input type="text" class="form-control js-settings-field" data-type="field" name="Subject" value="<?php echo $_SESSION['DataStorage']['Send']['Subject'] ?>">
                                             </div>
                                         </div>
 
@@ -154,7 +156,7 @@
                                             </div>
                                             <div class="form-group col-6">
                                                 <label>Отображение формы с подарками</label>
-                                                <select name="isVisibleGift" class="form-control js-settings-field">
+                                                <select name="isVisibleGift" data-type="field" class="form-control js-settings-field">
                                                     <?php
                                                         if ($_SESSION['DataStorage']['Send']['isVisibleGift'] == '1')
                                                             echo '<option value="0">false</option>
@@ -167,7 +169,7 @@
                                             </div>
                                             <div class="form-group col-6">
                                                 <label>Тема письма (subject)</label>
-                                                <input type="text" class="form-control js-settings-field" name="SubjectGift" value="<?php echo $_SESSION['DataStorage']['Send']['SubjectGift'] ?>">
+                                                <input type="text" class="form-control js-settings-field" data-type="field" name="SubjectGift" value="<?php echo $_SESSION['DataStorage']['Send']['SubjectGift'] ?>">
                                             </div>
                                         </div>
 
