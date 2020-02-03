@@ -1,18 +1,16 @@
 <?php
-    session_start();
-    require_once('settings/settings.php');
+    if (isset($_SESSION['Admin'])) {
 
-    if (isset($_POST['Save']) && isset($_SESSION['Admin'])) {
-
-        $templateDir = array_diff(scandir('../template'), array('..', '.', 'header.php', 'footer.php'));
-
-        //var_dump($templateDir);
-
+        $templateDir = array_diff(scandir('./template'), array('..', '.', 'header.php', 'footer.php', '.htaccess'));
         $templateKeys = array();
+
+        $moduleKeys = array(); // Ключи доп модуля
 
         foreach ($templateDir as $value) {
             $filename = pathinfo($value)['filename'];
-            $templateKeys[$filename] = array('dir' => 'template/'.$value, 'active' => isset($_POST[$filename.'-active']) ? $_POST[$filename.'-active'] : '0', 'order' => isset($_POST[$filename.'-order']) ? $_POST[$filename.'-order'] : '99');
+            $templateKeys[$filename] = array('dir' => 'template/'.$value, 'active' => isset($_POST[$filename.'-active']) ? $_POST[$filename.'-active'] : '0', 
+            'order' => isset($_POST[$filename.'-order']) ? $_POST[$filename.'-order'] : '99', 
+            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'adminModule' => $moduleKeys);
         }
 
         uasort($templateKeys, function($a, $b){
@@ -35,12 +33,12 @@
 
         //var_dump($settings);
 
-        Settings::save('settings/', $settings);
+        $_SESSION['DataStorage'] = $settings;
+        //header('Location: /admin');
 
-        $_SESSION['Message'] = '<div class="alert alert-success mt-1" role="alert">Изменения успешно сохранены!</div>';
-        header('Location: /admin');
+        echo true;
     }
     else {
-        header('Location: /admin');
+        //header('Location: /admin');
     }
 ?>

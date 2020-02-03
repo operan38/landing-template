@@ -1,10 +1,7 @@
 <?php
-    session_start();
-    require_once('settings/settings.php');
-
     if (isset($_POST['Auth'])) {
-        if ($_POST['Login'] == Settings::$LOGIN && $_POST['Password'] == Settings::$PASSWORD) {
-            $_SESSION['Admin'] = Settings::$LOGIN;
+        if ($_POST['Login'] == DataStorage::$login && $_POST['Password'] == DataStorage::$password) {
+            $_SESSION['Admin'] = DataStorage::$login;
             unset($_SESSION['Message']);
             header('Location: /admin');
         }
