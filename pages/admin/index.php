@@ -11,13 +11,6 @@
         </div>
     </div>
 
-    <form action="/admin/saveFile" method="POST">
-        <button class="btn btn-success mt-2" type="submit"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Сохранить в файл</button>
-    </form>
-    <form action="/admin/loadFile" method="POST">
-        <button class="btn btn-success mt-2" type="submit"><i class="fa fa-download mr-2" aria-hidden="true"></i>Загрузить из файла</button>
-    </form>
-
     <?php if (!isset($_SESSION['DataStorage']) && isset($_SESSION['Admin'])) { ?>
 
     <form action="/admin/save" method="POST">
@@ -31,9 +24,12 @@
             <div class="row">
                 <div class="col-12">
 
-                    <div class="d-flex mt-2 mb-2 align-items-center">
-                        <form action="/admin/logout" method="POST">
-                            <button class="btn btn-sm btn-danger mr-2" type="submit"><i class="fa fa-sign-out mr-1" aria-hidden="true"></i>Выйти</button>
+                    <div class="d-flex">
+                        <form action="/admin/saveFile" method="POST">
+                            <button class="btn btn-sm btn-success mr-2" type="submit"><i class="fa fa-floppy-o mr-2" aria-hidden="true"></i>Сохранить data-storage.json</button>
+                        </form>
+                        <form action="/admin/loadFile" method="POST">
+                            <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-download mr-2" aria-hidden="true"></i>Загрузить data-storage.json</button>
                         </form>
                     </div>
 
@@ -176,16 +172,13 @@
 
                                     </div>
                                 </div>
-                                <button class="btn btn-success mt-2 js-settings-save-btn" name="Save" type="submit"><i class="fa fa-check-square-o mr-2" aria-hidden="true"></i>Применить</button>
-                                <div class="progress js-settings-progress-bar mt-2 mb-2" style="display: none">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                                <button class="btn btn-success mt-2 js-settings-save-btn" name="Save" type="submit">
+                                    <i class="fa fa-check-square-o mr-2" aria-hidden="true"></i>
+                                    Применить
+                                    <span class="spinner-border js-settings-spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none"></span>
+                                </button>
                             </div>
                         <!--</form>-->
-
-                        <div>
-                            <a href="/" class="btn btn-primary mt-2"><i class="fa fa-angle-double-left mr-2" aria-hidden="true"></i>Вернуться на сайт</a>
-                        </div>
                     </div>
                 </div>
             </div>

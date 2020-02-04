@@ -21,8 +21,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex mt-2 mb-2 align-items-center">
-                            <a class="btn btn-sm btn-secondary" href="/admin"><i class="fa fa-cogs" aria-hidden="true"></i></a>
-                        </div>
+                            <form action="/admin/logout" method="POST">
+                                <button class="btn btn-sm btn-danger mr-2" type="submit"><i class="fa fa-sign-out mr-1" aria-hidden="true"></i>Выйти</button>
+                            </form>';
+                            if ($_SERVER['REQUEST_URI'] == '/')
+                                echo '<a class="btn btn-sm btn-secondary" href="/admin" title="На страницу администратора" alt="На страницу администратора"><i class="fa fa-cogs" aria-hidden="true"></i></a>';
+                            else
+                                echo '<a class="btn btn-sm btn-primary" href="/" title="Вернуться на сайт" alt="Вернуться на сайт"><i class="fa fa-arrow-left pr-1" aria-hidden="true"></i></a>';
+                        echo'</div>
                     </div>
                 </div>
             </div>

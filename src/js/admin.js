@@ -25,7 +25,7 @@ $(document).ready(function(){
         var $settingsFieldArray = $('.js-settings-field-array');
         
         var $saveBtn = $(this);
-        var $progressBar = $('.js-settings-progress-bar');
+        var $spinnerBorder = $('.js-settings-spinner-border');
         var settingsFieldKeys = {};
         var settingsFieldModule = {};
         var settingsFieldModuleArray = {};
@@ -73,7 +73,7 @@ $(document).ready(function(){
             settingsFieldKeys[saveModule+'-module-array'] = settingsFieldModuleArrayKey; // Сохранение в массив
         });
         
-        $progressBar.show();
+        $spinnerBorder.show();
         $saveBtn.attr('disabled', true);
 
         console.log(settingsFieldKeys);
@@ -85,7 +85,7 @@ $(document).ready(function(){
             data: settingsFieldKeys
         }).done(function(result)
         {
-            $progressBar.hide();
+            $spinnerBorder.hide();
             $saveBtn.attr('disabled', false);
             console.log(result);
         });
