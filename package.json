@@ -1,6 +1,6 @@
 {
   "name": "landing-template",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "simple landing-template",
   "scripts": {
     "build": "gulp"

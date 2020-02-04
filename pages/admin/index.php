@@ -75,7 +75,8 @@
                                             'catalog-6col' => 'Каталог с 6 товарами', 'catalog-3col' => 'Каталог с 3 товарами', 'gallery' => 'Галерея', 'characteristics-form' => 'Форма с характеристиками, таймером и кнопкой заказать',
                                             'why-us' => 'Почему мы?', 'certificates' => 'Сертификаты', 'video-review' => 'Видеобзор', 'how-to-order' => 'Как заказать?', 'simple-block-1' => 'Блок для вставки изображения 1',
                                             'simple-block-2' => 'Блок для вставки изображения 2', 'simple-block-3' => 'Блок для вставки изображения 3', 'reviews' => 'Отзывы', 'reviews-type-img-text' => 'Отзывы с картинками и текстом',
-                                            'reviews-type-img' => 'Отзывы с картинками', 'opportunities' => 'Возможности', 'faq' => 'Часто задаваемые вопросы', 'callback-form' => 'Форма "Остались вопросы?"', 'contact-form' => 'Контакты'
+                                            'reviews-type-img' => 'Отзывы с картинками', 'opportunities' => 'Возможности', 'faq' => 'Часто задаваемые вопросы', 'callback-form' => 'Форма "Остались вопросы?"', 'contact-form' => 'Контакты',
+                                            'catalog' => 'Каталог'
                                             );
 
                                             foreach ($template as $key => $value) {

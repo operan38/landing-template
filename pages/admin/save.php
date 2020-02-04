@@ -3,13 +3,13 @@
 
         $templateDir = array_diff(scandir('./template'), array('..', '.', 'header.php', 'footer.php', '.htaccess'));
         $templateKeys = array();
-        $moduleKeys = array(); // Ключи доп модуля
 
         foreach ($templateDir as $value) {
             $filename = pathinfo($value)['filename'];
             $templateKeys[$filename] = array('dir' => 'template/'.$value, 'active' => isset($_POST[$filename.'-active']) ? $_POST[$filename.'-active'] : '0', 
             'order' => isset($_POST[$filename.'-order']) ? $_POST[$filename.'-order'] : '99', 
-            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'module' => isset($_POST[$filename.'-module']) ? $_POST[$filename.'-module'] : '');
+            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'module' => isset($_POST[$filename.'-module']) ? $_POST[$filename.'-module'] : '',
+            'module-array' => isset($_POST[$filename.'-module-array']) ? $_POST[$filename.'-module-array'] : '');
         }
 
         uasort($templateKeys, function($a, $b){
@@ -30,7 +30,7 @@
         'Send' => $sendKeys
         );
 
-        //var_dump($settings);
+        var_dump($settings);
 
         $_SESSION['DataStorage'] = $settings;
         //header('Location: /admin');
