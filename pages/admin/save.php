@@ -6,10 +6,36 @@
 
         foreach ($templateDir as $value) {
             $filename = pathinfo($value)['filename'];
+
+            $module = '';
+            $moduleArray = '';
+
+            if (isset($_POST[$filename.'-module'])) {
+                $module = $_POST[$filename.'-module'];
+
+                foreach ($module as $moduleKey => $moduleValue) {
+                    $newKey = substr(strstr($moduleKey, '-'), 1); // убираем нименование модуля (оставляем свойство)
+                    $module[$newKey] = $module[$moduleKey];
+                    unset($module[$moduleKey]);
+                }
+            }
+
+            if (isset($_POST[$filename.'-module-array'])) {
+                $moduleArray = $_POST[$filename.'-module-array'];
+
+                foreach ($moduleArray as $moduleArrayKey => &$moduleArrayValue) { // ссылка на массив &
+                    foreach ($moduleArrayValue as $moduleKey => $moduleValue){
+                        $newKey = substr(strstr($moduleKey, '-'), 1); // убираем нименование модуля (оставляем свойство)
+                        $moduleArrayValue[$newKey] = $moduleArrayValue[$moduleKey];
+                        unset($moduleArrayValue[$moduleKey]);
+                    }
+                }
+            }
+
             $templateKeys[$filename] = array('dir' => 'template/'.$value, 'active' => isset($_POST[$filename.'-active']) ? $_POST[$filename.'-active'] : '0', 
             'order' => isset($_POST[$filename.'-order']) ? $_POST[$filename.'-order'] : '99', 
-            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'module' => isset($_POST[$filename.'-module']) ? $_POST[$filename.'-module'] : '',
-            'module-array' => isset($_POST[$filename.'-module-array']) ? $_POST[$filename.'-module-array'] : '');
+            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'module' => $module,
+            'module-array' => $moduleArray);
         }
 
         uasort($templateKeys, function($a, $b){
