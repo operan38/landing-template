@@ -13,12 +13,16 @@
     Router::route('/', function(){
         include('template/header.php');
 
-        $template = $_SESSION['DataStorage']['Template'];
+        $template = isset($_SESSION['DataStorage']['Template']) ? $_SESSION['DataStorage']['Template'] : '';
 
-        foreach ($template as $value) {
-            if ($value['active'] == '1') {
-                include($value['dir']);
+        if ($template != '') {
+
+            foreach ($template as $value) {
+                if ($value['active'] == '1') {
+                    include($value['dir']);
+                }
             }
+            
         }
 
         include('template/footer.php');

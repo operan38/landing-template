@@ -3,7 +3,7 @@
         <div class="form-group col-12">
             <input type="hidden">
             <label>Количество слайдов</label>
-            <input type="number" name="gallery-count" class="js-settings-field form-control" data-type="module" data-name="gallery">
+            <input type="number" name="gallery-count" class="js-settings-field form-control" data-type="module" data-name="gallery" value="<?php echo isset($value['module']['count']) ? $value['module']['count'] : '' ?>">
         </div>
     </div>
     <!--<div class="form-group border p-2">

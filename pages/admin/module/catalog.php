@@ -19,14 +19,18 @@
     </div>
     <div class="form-row align-items-center p-2 js-catalog-array">
         <?php
-            //print_r($value['module-array']);
-            for ($i = 0; $i < count($value['module-array']); $i++) {
-                echo '<div class="form-group border col-4 p-2">
-                <label>Заголовок</label>
-                <input type="text" name="catalog-title" data-num="'.$i.'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array" value="'.$value['module-array'][$i]['title'].'">
-                <label>Описание</label>
-                <input type="text" name="catalog-desc" data-num="'.$i.'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array" value="'.$value['module-array'][$i]['desc'].'">
-                </div>';
+            if (isset($value['module-array']) && $value['module-array'] != '') {
+
+                for ($i = 0; $i < count($value['module-array']); $i++) {
+                    echo '<div class="form-group border col-4 p-2">
+                    <label>Заголовок</label>
+                    <input type="text" name="catalog-title" data-num="'.$i.'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array" value="'.$value['module-array'][$i]['title'].'">
+                    <label>Описание</label>
+                    <textarea rows="6" name="catalog-desc" data-num="'.$i.'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">'.$value['module-array'][$i]['desc'].'</textarea>
+                    <label>Характеристики</label>
+                    <textarea rows="6" name="catalog-characteristic" data-num="'.$i.'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">'.$value['module-array'][$i]['characteristic'].'</textarea>
+                    </div>';
+                }
             }
         ?>
         <!--<div class="form-group border p-2">
@@ -34,18 +38,6 @@
             <input type="text" name="catalog-title" data-num="0" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">
             <label>Описание</label>
             <input type="text" name="catalog-desc" data-num="0" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">
-        </div>
-        <div class="form-group border p-2">
-            <label>Заголовок</label>
-            <input type="text" name="catalog-title" data-num="1" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">
-            <label>Описание</label>
-            <input type="text" name="catalog-desc" data-num="1" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">
-        </div>
-        <div class="form-group border p-2">
-            <label>Заголовок</label>
-            <input type="text" name="catalog-title" data-num="2" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">
-            <label>Описание</label>
-            <input type="text" name="catalog-desc" data-num="2" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">
         </div>-->
     </div>
 </section>

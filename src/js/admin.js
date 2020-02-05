@@ -10,7 +10,9 @@ $(document).ready(function(){
                 element += '<label>Заголовок</label>'
                 element += '<input type="text" name="catalog-title" data-num="'+i+'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">'
                 element += '<label>Описание</label>'
-                element += '<input type="text" name="catalog-desc" data-num="'+i+'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array">'
+                element += '<textarea rows="6" name="catalog-desc" data-num="'+i+'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array"></textarea>'
+                element += '<label>Характеристики</label>';
+                element += '<textarea rows="6" name="catalog-characteristic" data-num="'+i+'" class="form-control js-settings-field-array" data-name="catalog" data-type="module-array"></textarea>';
                 element += '</div>';
             }
         }
