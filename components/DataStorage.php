@@ -13,14 +13,14 @@ class DataStorage
     }
 
     public static function saveFile() {
-        file_put_contents('data-storage.json', json_encode($_SESSION['DataStorage']));
+        file_put_contents('components/data-storage.json', json_encode($_SESSION['data-storage']));
     }
 
     public static function loadFile() {
-        if (file_exists('data-storage.json')) {
-            $file = file_get_contents('data-storage.json');  // Открыть файл data-storage.json
+        if (file_exists('components/data-storage.json')) {
+            $file = file_get_contents('components/data-storage.json');  // Открыть файл data-storage.json
             $taskList = json_decode($file, true);  // Декодировать в массив
-            $_SESSION['DataStorage'] = $taskList;
+            $_SESSION['data-storage'] = $taskList;
             return $taskList;
         }
         else {

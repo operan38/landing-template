@@ -1,3 +1,8 @@
 <?php
-    DataStorage::loadFile();
+    if (isset($_SESSION['admin'])) {
+        DataStorage::loadFile(); 
+    }
+    else {
+        header('Location: /admin');
+    }
 ?>

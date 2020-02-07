@@ -1,5 +1,8 @@
 <?php
-    if (isset($_SESSION['Admin'])) {
+    if (isset($_SESSION['admin'])) {
+
+        $generalKeys = array('page-title' => isset($_POST['page-title']) ? $_POST['page-title'] : 'landing-template', 
+        'facebook-metric' => isset($_POST['facebook-metric']) ? $_POST['facebook-metric'] : '');
 
         $templateDir = array_diff(scandir('./template'), array('..', '.', 'header.php', 'footer.php', '.htaccess'));
         $templateKeys = array();
@@ -34,36 +37,34 @@
 
             $templateKeys[$filename] = array('dir' => 'template/'.$value, 'active' => isset($_POST[$filename.'-active']) ? $_POST[$filename.'-active'] : '0', 
             'order' => isset($_POST[$filename.'-order']) ? $_POST[$filename.'-order'] : '99', 
-            'dirAdminModule' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'module' => $module,
+            'dir-admin-module' => file_exists('pages/admin/module/'.$value) ? 'pages/admin/module/'.$value : '', 'module' => $module,
             'module-array' => $moduleArray);
         }
 
-        uasort($templateKeys, function($a, $b){
+        uasort($templateKeys, function($a, $b){ // Сортировка по полю order
             return $a['order'] <=> $b['order'];
         });
 
-        $sendKeys = array('Email' => isset($_POST['Email']) ? $_POST['Email'] : '',
-        'SendPageTitle' => isset($_POST['SendPageTitle']) ? $_POST['SendPageTitle'] : 'Ваш заказ принят!',
-        'From' => isset($_POST['From']) ? $_POST['From'] : 'sbrpc.ru',
-        'Subject' => isset($_POST['Subject']) ? $_POST['Subject'] : 'Тестовый заказ',
-        'isVisibleGift' => isset($_POST['isVisibleGift']) ? $_POST['isVisibleGift'] : '0',
-        'SubjectGift' => isset($_POST['SubjectGift']) ? $_POST['SubjectGift'] : 'Тестовый заказ (e-mail подарок)');
+        $sendKeys = array('email' => isset($_POST['email']) ? $_POST['email'] : 'test@test.ru',
+        'send-page-title' => isset($_POST['send-page-title']) ? $_POST['send-page-title'] : 'Ваш заказ принят!',
+        'from' => isset($_POST['from']) ? $_POST['from'] : 'sbrpc.ru',
+        'subject' => isset($_POST['subject']) ? $_POST['subject'] : 'Тестовый заказ',
+        'is-visible-gift' => isset($_POST['is-visible-gift']) ? $_POST['is-visible-gift'] : '0',
+        'subject-gift' => isset($_POST['subject-gift']) ? $_POST['subject-gift'] : 'Тестовый заказ (e-mail подарок)');
 
-        $settings = array('General' => 
-        array('PageTitle' => isset($_POST['PageTitle']) ? $_POST['PageTitle'] : 'landing-template', 
-              'FacebookMetric' => isset($_POST['FacebookMetric']) ? $_POST['FacebookMetric'] : ''),
-        'Template' => $templateKeys,
-        'Send' => $sendKeys
+        $settings = array('general' => $generalKeys,
+        'template' => $templateKeys,
+        'send' => $sendKeys
         );
 
         var_dump($settings);
 
-        $_SESSION['DataStorage'] = $settings;
+        $_SESSION['data-storage'] = $settings;
         //header('Location: /admin');
 
         echo true;
     }
     else {
-        //header('Location: /admin');
+        header('Location: /admin');
     }
 ?>

@@ -9,7 +9,7 @@
         <div class="row">
             <?php
 
-            $catalog = isset($_SESSION['DataStorage']['Template']['catalog']) ? $_SESSION['DataStorage']['Template']['catalog'] : '';
+            $catalog = isset($_SESSION['data-storage']['template']['catalog']) ? $_SESSION['data-storage']['template']['catalog'] : '';
 
             if ($catalog != '') {
 

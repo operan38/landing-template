@@ -1,5 +1,5 @@
 <?php 
-    $galleryItemCount = isset($_SESSION['DataStorage']['Template']['gallery']['module']['count']) ? (int)$_SESSION['DataStorage']['Template']['gallery']['module']['count'] : 0; // Количество слайдов в галереи
+    $galleryItemCount = isset($_SESSION['data-storage']['template']['gallery']['module']['count']) ? (int)$_SESSION['data-storage']['template']['gallery']['module']['count'] : 0; // Количество слайдов в галереи
 ?>
 
 <section class="gallery">

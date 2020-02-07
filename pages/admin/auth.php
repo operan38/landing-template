@@ -1,7 +1,7 @@
 <?php
-    if (isset($_POST['Auth'])) {
-        if ($_POST['Login'] == DataStorage::$login && $_POST['Password'] == DataStorage::$password) {
-            $_SESSION['Admin'] = DataStorage::$login;
+    if (isset($_POST['auth'])) {
+        if ($_POST['login'] == DataStorage::$login && $_POST['password'] == DataStorage::$password) {
+            $_SESSION['admin'] = DataStorage::$login;
             header('Location: /admin');
         }
         else {

@@ -7,13 +7,13 @@
     error_reporting(E_ALL);
     session_start();
 
-    if (!isset($_SESSION['DataStorage']))
+    if (!isset($_SESSION['data-storage']))
         DataStorage::init();
 
     Router::route('/', function(){
         include('template/header.php');
 
-        $template = isset($_SESSION['DataStorage']['Template']) ? $_SESSION['DataStorage']['Template'] : '';
+        $template = isset($_SESSION['data-storage']['template']) ? $_SESSION['data-storage']['template'] : '';
 
         if ($template != '') {
 
@@ -74,28 +74,4 @@
     /*Router::route('/blog/(\w+)/(\d+)', function($category, $id){
         print $category . ':' . $id;
     });*/
-
-    /*require_once('admin/settings/settings.php');
-    $G_SETTINGS = Settings::load('admin/settings/');
-
-    $PAGE_TITLE = isset($G_SETTINGS['General']['PageTitle']) ? $G_SETTINGS['General']['PageTitle'] : '';
-
-    require_once('template/header.php'); // Подключение header
-
-    if (!isset($G_SETTINGS) || $G_SETTINGS === NULL) {
-        print('Файл data.json не найден');
-        exit();
-    }
-
-    $template = $G_SETTINGS['Template'];
-
-    foreach ($template as $value) {
-        if ($value['active'] == '1') {
-            include($value['dir']);
-        }
-    }*/
-
-
-
-    //require_once('template/footer.php'); // Подключение footer
 ?>

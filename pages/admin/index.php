@@ -1,3 +1,7 @@
+<?php 
+    include('helper/func.php');
+?>
+
 <section class="admin">
 
     <div class="container-fluid">
@@ -8,7 +12,7 @@
         </div>
     </div>
 
-    <?php if (!isset($_SESSION['DataStorage']) && isset($_SESSION['Admin'])) { ?>
+    <?php if (!isset($_SESSION['data-storage']) && isset($_SESSION['admin'])) { ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -20,7 +24,7 @@
         </div>
     </div>
 
-    <?php } else if (isset($_SESSION['Admin'])) { ?>
+    <?php } else if (isset($_SESSION['admin'])) { ?>
 
         <div class="container-fluid section-container">
 
@@ -55,17 +59,17 @@
                                 <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
                                     <div class="form-group">
                                         <label>Title страницы</label>
-                                        <input type="text" class="form-control js-settings-field" data-type="field" name="PageTitle" value="<?php echo $_SESSION['DataStorage']['General']['PageTitle'] ?>">
+                                        <input type="text" class="form-control js-settings-field" data-type="field" name="page-title" value="<?php echo $_SESSION['data-storage']['general']['page-title'] ?>">
                                     </div>
                                     <div class="form-group">
                                         <label>Facebook метрика</label>
-                                        <textarea class="form-control js-settings-field" data-type="field" name="FacebookMetric" rows="8"><?php echo $_SESSION['DataStorage']['General']['FacebookMetric'] ?></textarea>
+                                        <textarea class="form-control js-settings-field" data-type="field" name="facebook-metric" rows="8"><?php echo $_SESSION['data-storage']['general']['facebook-metric'] ?></textarea>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="template" role="tabpanel" aria-labelledby="template-tab">
                                     <?php
 
-                                        $template = $_SESSION['DataStorage']['Template'];
+                                        $template = $_SESSION['data-storage']['template'];
 
                                         $title = array('product-form-modal'=> 'Модальное окно заказа', 'center-form' => 'Центральная форма заказа', 'catalog-1col' => 'Каталог с одинм товаром',
                                         'opportunities-type-left-img-1' => 'Возможности (картинка слева, текст с кнопкой справа)', 'opportunities-type-right-img-1' => 'Возможности (картинка справа, текст слева)',
@@ -116,8 +120,8 @@
                                             }
 
                                             echo'</select></div></div></div></div>';
-                                            if ($value['dirAdminModule'] != '') {
-                                                include($value['dirAdminModule']);
+                                            if ($value['dir-admin-module'] != '') {
+                                                include($value['dir-admin-module']);
                                             }
                                             echo'</div>';
                                         }
@@ -131,19 +135,19 @@
                                         </div>
                                         <div class="form-group col-6">
                                             <label>E-mail</label>
-                                            <input type="text" class="form-control js-settings-field" data-type="field" name="Email" value="<?php echo $_SESSION['DataStorage']['Send']['Email'] ?>">
+                                            <input type="text" class="form-control js-settings-field" data-type="field" name="email" value="<?php echo $_SESSION['data-storage']['send']['email'] ?>">
                                         </div>
                                         <div class="form-group col-6">
                                             <label>Title cтраницы</label>
-                                            <input type="text" class="form-control js-settings-field" data-type="field" name="SendPageTitle" value="<?php echo $_SESSION['DataStorage']['Send']['SendPageTitle'] ?>">
+                                            <input type="text" class="form-control js-settings-field" data-type="field" name="send-page-title" value="<?php echo $_SESSION['data-storage']['send']['send-page-title'] ?>">
                                         </div>
                                         <div class="form-group col-6">
                                             <label>Сайт (from)</label>
-                                            <input type="text" class="form-control js-settings-field" data-type="field" name="From" value="<?php echo $_SESSION['DataStorage']['Send']['From'] ?>">
+                                            <input type="text" class="form-control js-settings-field" data-type="field" name="from" value="<?php echo $_SESSION['data-storage']['send']['from'] ?>">
                                         </div>
                                         <div class="form-group col-6">
                                             <label>Тема письма (subject)</label>
-                                            <input type="text" class="form-control js-settings-field" data-type="field" name="Subject" value="<?php echo $_SESSION['DataStorage']['Send']['Subject'] ?>">
+                                            <input type="text" class="form-control js-settings-field" data-type="field" name="subject" value="<?php echo $_SESSION['data-storage']['send']['subject'] ?>">
                                         </div>
                                     </div>
 
@@ -153,9 +157,9 @@
                                         </div>
                                         <div class="form-group col-6">
                                             <label>Отображение формы с подарками</label>
-                                            <select name="isVisibleGift" data-type="field" class="form-control js-settings-field">
+                                            <select name="is-visible-gift" data-type="field" class="form-control js-settings-field">
                                                 <?php
-                                                    if ($_SESSION['DataStorage']['Send']['isVisibleGift'] == '1')
+                                                    if ($_SESSION['data-storage']['send']['is-visible-gift'] == '1')
                                                         echo '<option value="0">false</option>
                                                         <option value="1" selected>true</option>';
                                                     else
@@ -166,7 +170,7 @@
                                         </div>
                                         <div class="form-group col-6">
                                             <label>Тема письма (subject)</label>
-                                            <input type="text" class="form-control js-settings-field" data-type="field" name="SubjectGift" value="<?php echo $_SESSION['DataStorage']['Send']['SubjectGift'] ?>">
+                                            <input type="text" class="form-control js-settings-field" data-type="field" name="subject-gift" value="<?php echo $_SESSION['data-storage']['send']['subject-gift'] ?>">
                                         </div>
                                     </div>
 
@@ -183,27 +187,5 @@
             </div>
 
         </div>
-    <?php } else { ?>
-
-        <div class="container-fluid mt-5">
-            <div class="row">
-                <div class="col-12">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <form action="/admin/auth" method="POST">
-                            <div class="border p-5">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Логин" class="form-control" name="Login" id="authLogin" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" placeholder="Пароль" class="form-control" name="Password" id="authPassword" required>
-                                </div>
-                                <button type="submit" class="btn btn-success w-100" name="Auth">Войти</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <?php } ?>
+    <?php } else { include('template/authForm.php'); }?>
 </section>

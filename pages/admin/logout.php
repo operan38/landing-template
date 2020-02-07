@@ -1,4 +1,9 @@
 <?php
-    unset($_SESSION['Admin']);
-    header('Location: /');
+    if (isset($_SESSION['admin'])) {
+        unset($_SESSION['admin']);
+        header('Location: /');
+    }
+    else {
+        header('Location: /admin');
+    }
 ?>
